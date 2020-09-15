@@ -1,0 +1,5 @@
+{
+  "mean_time_wait": 20,
+  "time_work_barber_shop_period": 180,
+  "time_work_hairdressers": [29, 30, 15]
+}
