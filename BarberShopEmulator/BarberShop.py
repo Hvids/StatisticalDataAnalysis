@@ -69,5 +69,9 @@ class BarberShop:
     def __count_clients(self):
         return poisson.rvs(self.time_period * self.alpha, size=1)[0]
 
-
-
+    @classmethod
+    def create_with_hairdressers(cls,mean_time_wait_client, time_period, hairdressers_time, start_time_work=Time(10,0)):
+        barber = cls(mean_time_wait_client, time_period)
+        for time_work in hairdressers_time:
+            barber.add_hairdresser(Hairdresser(time_work))
+        return barber
